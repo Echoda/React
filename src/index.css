@@ -1,0 +1,9 @@
+#root{
+    width: 520px;
+    margin: 0 auto;
+    border: 1px solid;
+}
+#root img{
+    /* 底部白边 */
+    display: block;
+}
