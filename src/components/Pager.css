@@ -1,0 +1,15 @@
+.page{
+    display: inline-block;
+    padding: 5px 8px;
+    margin: 0 3px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+.active{
+    border: 1px solid indianred;
+    color: indianred;
+}
+.disabled{
+    color: #ccc;
+    border-color: #ccc;
+}
