@@ -1,0 +1,18 @@
+.threelayout{
+    display: flex;
+}
+
+.main{
+    order: 2;
+    border: 1px solid;
+}
+
+.left{
+    order: 1;
+    border: 1px solid rgb(42, 121, 199);
+}
+
+.right{
+    order: 3;
+    border: 1px solid rgb(209, 121, 32);
+}
