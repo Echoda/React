@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import commomTypes from '../../../utils/commonPropTypes'
 
 // datas = [
 //     {
@@ -18,6 +20,13 @@ import React, { Component } from 'react'
 // name: 
 
 export default class CheckBoxGroup extends Component {
+
+    static propTypes = {
+        datas: commomTypes.groupDatas.isRequired,
+        checkedDates: PropTypes.array,
+        name: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired
+    }
 
 
     getCheckBoxs = () => {

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import commomTypes from '../../../utils/commonPropTypes'
 
 // datas = [
 //     {
@@ -19,6 +21,12 @@ import React, { Component } from 'react'
 
 export default class RadioBoxGroup extends Component {
 
+    static propTypes = {
+        datas: commomTypes.groupDatas.isRequired,
+        checkedDate: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired
+    }
 
     getRadioBoxs = () => {
         const { datas, checkedDate } = this.props;
