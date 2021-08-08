@@ -1,62 +1,61 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import commomTypes from '../../../utils/commonPropTypes'
+import DataListWrapper from '../../hoc/withDatasList'
 
-// datas = [
-//     {
-//         text: '篮球',
-//         value: 'basketball',
-//     },
-//     {
-//         text: '足球',
-//         value: 'football',
-//     },
-//     {
+// data = {
 //         text: '排球',
 //         value: 'volleyball',
-//     }
-// ]
+// }
 // checkedDate:  默认选中的数据
 // name: 
 
-export default class Select extends Component {
+class Option extends Component {
     
     static propTypes = {
-        datas: commomTypes.groupDatas.isRequired,
+        data: commomTypes.singleDate.isRequired,
         checkedDate: PropTypes.string,
         name: PropTypes.string.isRequired,
         onChange: PropTypes.func.isRequired
     }
 
-    getOptions = () => {
-        const { datas } = this.props;
+    getOption = () => {
+        const { data } = this.props;
 
-        return datas.map((it) => {
-            return (
-                <option
-                    value={it.value} 
-                    key={it.value} 
-                    >
-                    {it.text}
-                </option>)
-        })
-    }
-
-    handleChange = (e) => {
-        const { onChange, name} = this.props;
-        const {value} = e.target;
-        onChange && onChange(name, value, e);
+        return (
+            <option
+                value={data.value} 
+                key={data.value} 
+                >
+                {data.text}
+            </option>
+        )
     }
 
     render() {
         return (
+            <>
+                {this.getOption()}
+            </>
+        )
+    }
+}
+
+
+const Options = DataListWrapper(Option);
+
+export default class Select extends Component {
+    render() {
+        return (
             <select 
                 name={this.props.name}
-                onChange={this.handleChange}
+                onChange={this.props.onChange}
                 value={this.props.checkedDate}
             >
-                {this.getOptions()}
+                <Options {...this.props} />
             </select>
         )
     }
 }
+
+

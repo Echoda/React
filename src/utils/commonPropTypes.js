@@ -6,6 +6,10 @@ const types = {
         text: PropTypes.string.isRequired,
         value: PropTypes.string.isRequired,
     })),
+    singleDate: PropTypes.shape({ // 单个数据
+        text: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+    })
 }
 
 export default types;

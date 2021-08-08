@@ -28,9 +28,7 @@ export default class Test extends Component {
 
     render() {
         return (
-            <div>
-                <CheckBoxGroup name='hoppy' onChange={this.handleChange} {...this.state} />
-            </div>
+            <CheckBoxGroup name='hoppy' onChange={this.handleChange} {...this.state} />
         )
     }
 }
